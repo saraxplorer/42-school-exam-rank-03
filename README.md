@@ -15,12 +15,14 @@ int main ()
 	{
     //first remove all spaces, the following while does that, but it must be in the beginning to get rid of potential initial spaces
     //If this loop comes later, the initial spaces will not be removed
-  while (str[i] == ' ' || str[i] == '\t' || str[i] == '\r')
+  while (str[i] == ' ' || str[i] == '\t' || str[i] == '\r')//remove all spaces including initial
 			i++;
-		if (str[i] != '\0')
-			count_substring++;
-		while (str[i] && str[i] != ' ' && str[i] != '\t' && str[i] != '\r')
+		if (str[i] != '\0') //If there is something in string after skipping space
+		{
+			count_substring++;//count 1
+			while (str[i] && str[i] != ' ' && str[i] != '\t' && str[i] != '\r')//skip other letters in a string
 			i++;
+		}
 	}
 
 	printf("%d", count_substring);
