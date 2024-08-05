@@ -1,4 +1,4 @@
-**Step 1: Count Sunstrings:**\
+**Step 1: Count Sunstrings:**
 ``` c
 #include <stdlib.h>
 #include <stdio.h>
