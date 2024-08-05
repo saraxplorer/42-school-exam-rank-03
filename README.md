@@ -54,7 +54,7 @@ int main ()
 
 ```
 
-** Step 3:malloc for array**
+**Step 3:malloc for array**
 
 ``` c
 #include <stdlib.h>
