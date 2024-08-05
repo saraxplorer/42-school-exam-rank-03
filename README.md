@@ -30,3 +30,36 @@ int main ()
 }
 
 ```
+** Step 2:malloc for array**
+``` c
+#include <stdlib.h>
+#include <stdio.h>
+
+char **ft_split(char *str)
+{
+	int	count_substring = 0;
+	int i = 0;
+
+	while (str[i] != '\0')
+	{
+		while (str[i] == ' ' || str[i] == '\t' || str[i] == '\r')//remove all spaces including initial
+			i++;
+		if (str[i] != '\0') //If there is something in string after skipping space
+		{
+			count_substring++;//count 1
+			while (str[i] && str[i] != ' ' && str[i] != '\t' && str[i] != '\r')//skip other letters in a string
+			i++;
+		}
+	}
+
+	char **subs_array = (char **)malloc(sizeof(char *) * (count_substring + 1)); 
+}
+
+int main ()
+{
+
+	char * str = "  At least I can count   ";
+	//printf("%d", count_substring);
+	return 0;
+}
+```
