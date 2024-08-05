@@ -51,37 +51,16 @@ int main ()
 }
 ```
 
-**Step 3:malloc for array using the subs_num**
+Step 3:Use the count_substring to malloc for an array\
 
-``` c
-#include <stdlib.h>
-#include <stdio.h>
+Step 4: Run a while loop to do the following
+4.1. Skip initial spaces
+4.2. store the position after skipping space
+4.3. Skip other letters in a string
+4.4. if the skip space position and end letter position are different, meaning there is a substring,  malloc for a string, (protect & free) and copy that part.
 
-char **ft_split(char *str)
-{
-	int	count_substring = 0;
-	int i = 0;
+Step 5: Return the substrings. 
 
-	while (str[i] != '\0')
-	{
-		while (str[i] == ' ' || str[i] == '\t' || str[i] == '\r')//remove all spaces including initial
-			i++;
-		if (str[i] != '\0') //If there is something in string after skipping space
-		{
-			count_substring++;//count 1
-			while (str[i] && str[i] != ' ' && str[i] != '\t' && str[i] != '\r')//skip other letters in a string
-			i++;
-		}
-	}
+See source code for the last parts code
 
-	char **subs_array = (char **)malloc(sizeof(char *) * (count_substring + 1)); 
-}
 
-int main ()
-{
-
-	char * str = "  At least I can count   ";
-	//printf("%d", count_substring);
-	return 0;
-}
-```
