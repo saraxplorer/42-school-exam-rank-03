@@ -1,4 +1,27 @@
-**Step 1: Count Sunstrings:**
+**Step 1: write a simple strncpy**
+``` C
+char *ft_strncpy(char *copy, char *original, int n)
+{
+	int i = 0;
+
+	while (n > i && original[i])
+	{
+		copy[i] = original[i];
+		i++;
+	}
+	copy[i] = '\0';
+	return (copy);
+}
+int main ()
+{
+	char * str = "  At least I can count   ";
+	char copy[15] = "abc";
+	printf("%s", ft_strncpy(copy, str, 10));
+	return 0;
+}
+```
+
+**Step 2: Count Sunstrings:**
 ``` c
 #include <stdlib.h>
 #include <stdio.h>
@@ -30,7 +53,9 @@ int main ()
 }
 
 ```
-** Step 2:malloc for array**
+
+** Step 3:malloc for array**
+
 ``` c
 #include <stdlib.h>
 #include <stdio.h>
