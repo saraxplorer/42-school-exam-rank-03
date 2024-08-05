@@ -51,15 +51,15 @@ int main ()
 }
 ```
 
-Step 3:Use the count_substring to malloc for an array\
+Step 3:Use the count_substring to malloc for an array
 
-Step 4: Run a while loop to do the following
-4.1. Skip initial spaces
-4.2. store the position after skipping space
-4.3. Skip other letters in a string
-4.4. if the skip space position and end letter position are different, meaning there is a substring,  malloc for a string, (protect & free) and copy that part.
+Step 4: Run a while loop to do the following\
+4.1. Skip initial spaces\
+4.2. store the position after skipping space\
+4.3. Skip other letters in a string\
+4.4. if the skip space position and end letter position are different, meaning there is a substring,  malloc for a string, (protect & free) and copy that part\
 
-Step 5: Return the substrings. 
+Step 5: Return the substrings.\
 
 See source code for the last parts code
 
