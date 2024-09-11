@@ -74,7 +74,7 @@ char **ft_split(char *str)
 			}
 				
 			ft_strncpy(subs_array[k], &str[start], i-start); //send the start position of the str 
-			k++;
+			k++;//move to the next substring, this line is conncted to the outer while loop
 		}	
 		subs_array[k] = NULL;	
 	}
