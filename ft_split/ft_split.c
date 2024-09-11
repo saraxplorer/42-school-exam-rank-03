@@ -47,7 +47,7 @@ char **ft_split(char *str)
 {
 	
 	int i = 0;
-	int j = 0;
+	int start = 0;
 	int k = 0;
 
 	int substr_num = count_substrings(str);
@@ -58,21 +58,22 @@ char **ft_split(char *str)
 	i = 0;
 	while (str[i])
 	{
-		while (str[i] == ' ' || str[i] == '\t' || str[i] == '\r')//remove spaces including initial
+		while (str[i] == ' ' || str[i] == '\t' || str[i] == '\r')//remove initial spaces
 			i++;
-		j = i;//where the space finished
-		while (str[i] && str[i] != ' ' && str[i] != '\r' && str[i] != '\t')//skip other letter in a sub
+		start = i;//store the starting point of  a substring
+		while (str[i] && str[i] != ' ' && str[i] != '\r' && str[i] != '\t')//go to the end of the substring
 			i++;
-		if (i > j)//if there is letters in a sub, coz i moved forward, since j is at the end of space
+		if (i > start)//if i moves ahead meaning there are char/chars in the substring
 		{
-			subs_array[k] = (char *) malloc(sizeof(char) * (i - j) + 1);//(i - j) is length of sub
+			//malloc for that substring
+			subs_array[k] = (char *) malloc(sizeof(char) * (i - start) + 1);//(i - start) is length of substring
 			if (subs_array[k] == NULL)
 			{
 				free_array(k, subs_array);
 				return NULL;
 			}
 				
-			ft_strncpy(subs_array[k], &str[j], i-j);
+			ft_strncpy(subs_array[k], &str[start], i-start); //send the start position of the str 
 			k++;
 		}	
 		subs_array[k] = NULL;	
