@@ -21,7 +21,7 @@ int count_substrings(char *str)
 
 	while (str[i])
 	{
-		while (str[i] == ' ' || str[i] == '\r' || str[i] == '\t')//remove spaces including initial
+		while (str[i] == ' ' || str[i] == '\r' || str[i] == '\t')//remove spaces: initial spaces for first round and other spaces for rest
 			i++;
 		if (str[i])//If there is something in string after skipping space
 		{
