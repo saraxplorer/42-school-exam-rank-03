@@ -3,3 +3,4 @@ Apart from these, practice exercise from previous rank, preferrably in following
 2. ft_putnbr
 3. tab_mult
 4. ft_atoi_base
+5. rstr_capitalizer
