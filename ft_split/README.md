@@ -1,27 +1,4 @@
-**Step 1: write a simple strncpy**
-``` C
-char *ft_strncpy(char *copy, char *original, int n)
-{
-	int i = 0;
-
-	while (n > i && original[i])
-	{
-		copy[i] = original[i];
-		i++;
-	}
-	copy[i] = '\0';
-	return (copy);
-}
-int main ()
-{
-	char * str = "  At least I can count   ";
-	char copy[15] = "abc";
-	printf("%s", ft_strncpy(copy, str, 10));
-	return 0;
-}
-```
-
-**Step 2: Count Sunstrings:**
+**Step 1: Count Sunstrings:**
 ``` c
 int count_substrings(char *str)
 {	
@@ -51,13 +28,36 @@ int main ()
 }
 ```
 
-Step 3:Use the count_substring to malloc for an array
+Step 2:Use the count_substring to malloc for an array
 
-Step 4: Run a while loop to do the following\
-4.1. Skip initial spaces\
-4.2. store the position after skipping space\
-4.3. Skip other letters in a string\
-4.4. if the skip space position and end letter position are different, meaning there is a substring,  malloc for a string, (protect & free) and copy that part
+Step 3: Run a while loop to do the following\
+3.1. Skip initial spaces\
+3.2. store the position after skipping space\
+3.3. Skip other letters in a string\
+3.4. if the skip space position and end letter position are different, meaning there is a substring,  malloc for a string, (protect & free) and copy that part
+
+**Step 4: write a simple strncpy**
+``` C
+char *ft_strncpy(char *copy, char *original, int n)
+{
+	int i = 0;
+
+	while (n > i && original[i])
+	{
+		copy[i] = original[i];
+		i++;
+	}
+	copy[i] = '\0';
+	return (copy);
+}
+int main ()
+{
+	char * str = "  At least I can count   ";
+	char copy[15] = "abc";
+	printf("%s", ft_strncpy(copy, str, 10));
+	return 0;
+}
+```
 
 Step 5: Return the substrings.
 
