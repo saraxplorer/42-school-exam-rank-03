@@ -61,6 +61,6 @@ Step 4: Run a while loop to do the following\
 
 Step 5: Return the substrings.
 
-See source code for the last parts code
+See source code for more
 
 
