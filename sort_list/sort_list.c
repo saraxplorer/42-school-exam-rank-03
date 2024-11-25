@@ -4,9 +4,9 @@
 t_list	*sort_list(t_list* lst, int (*cmp)(int, int))
 {	
 	int temp;
-	t_list *copy;
+	t_list *result;
 
-	copy = lst;//initialize head
+	result = lst;//initialize head
 	
 	while (lst && lst->next)
 	{
@@ -16,10 +16,10 @@ t_list	*sort_list(t_list* lst, int (*cmp)(int, int))
 			temp = lst->data;//swap
 			lst->data = lst->next->data;
 			lst->next->data = temp;
-			lst = copy;//reset lst to head to check from the beginning again
+			lst = result;//reset lst to head to check from the beginning again
 		}
 		else //if sorted, we move to the next node
 			lst = lst->next;
 	}
-	return (copy);
+	return (result);
 }
