@@ -6,7 +6,7 @@ t_list	*sort_list(t_list* lst, int (*cmp)(int, int))
 	int temp;
 	t_list *copy;
 
-	head = lst;//initialize head
+	copy = lst;//initialize head
 	
 	while (lst && lst->next)
 	{
