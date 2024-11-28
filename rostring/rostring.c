@@ -81,12 +81,6 @@ int main(int argc, char **argv)
     if (argc >= 2)
     { 
         char **array = ft_split(argv[1]);
-        int j = 0;
-        while(array[j])
-        {
-            printf("array::%s\n", array[j]);
-            j++;
-        }
         int i  = 1;
         while (array[i])
         {
