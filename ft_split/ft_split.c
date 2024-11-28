@@ -1,11 +1,11 @@
 #include <stdlib.h>
 #include <stdio.h>
 
-char *ft_strncpy(char *copy, char *original, int n)
+char *ft_strncpy(char *copy, char *original, int len)
 {
 	int i = 0;
 
-	while (n > i && original[i])
+	while (len > i && original[i])
 	{
 		copy[i] = original[i];
 		i++;
@@ -27,11 +27,14 @@ int count_substrings(char *str)
 		{
 			subs_num++;//count 1
 			while (str[i] && str[i] != ' ' && str[i] != '\r' && str[i] != '\t')//skip other letters in a string
-				i++;
+				i++;   
 		}
 	}
 	return (subs_num);
 }
+
+//the null check in while (str[i]) prevents memory leak in no space test (example "rhfhff")
+//use cc ft_split.c -fsanitize=address -g3 -fno-omit-frame-pointer for checking
 
 void	free_array(int i, char **array)
 {
@@ -52,7 +55,7 @@ char **ft_split(char *str)
 
 	int substr_num = count_substrings(str);
 
-	char **subs_array = (char **)malloc(sizeof(char *) * (substr_num + 1));
+	char **subs_array = (char **)malloc(sizeof(char *) * (substr_num + 1));//this 1 must be in the parenthesis otherwise memory leak
 	if (subs_array == NULL)
 		return NULL;
 	i = 0;
